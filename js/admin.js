@@ -93,9 +93,11 @@ orderPageTable.addEventListener('click', (e) => {
     const status = e.target.getAttribute('data-status');
     if (targetClass === 'orderStatus') {
         changeOrderStatus(id, status);
+        return
     }
     else if (targetClass === 'delSingleOrder-Btn') {
         delOrderList(id);
+        return
     }
 })
 
