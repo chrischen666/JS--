@@ -56,6 +56,8 @@ function renderOrderList() {
         //組訂單日期字串
         const timeStamp = new Date(order.createdAt * 1000);
         const orderCreateDate = timeStamp.getFullYear() + '/' + (timeStamp.getMonth() + 1) + '/' + timeStamp.getDate()
+        //訂單狀態處理
+        const orderPaid = order.paid ? '未處理' : '已處理';
         //組訂單字串
         str += `  <tr>
                             <td>${order.id}</td>
@@ -70,7 +72,7 @@ function renderOrderList() {
                             </td>
                             <td>${orderCreateDate}</td>
                             <td >
-                                <a href="#" class="orderStatus" data-status='${order.paid}' data-id='${order.id}'>${order.paid === false ? '未處理' : '已處理'}</a>
+                                <a href="#" class="orderStatus" data-status='${order.paid}' data-id='${order.id}'>${orderPaid}</a>
                             </td>
                             <td>
                                 <input
