@@ -92,6 +92,7 @@ productWrap.addEventListener('click', (e) => {
     cartData.forEach(cart => {
         if (cart.product.id === productId) {
             numCheck = cart.quantity += 1;
+            console.log(cart.quantity);
         }
     })
     axios.post(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/carts`, {
